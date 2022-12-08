@@ -1,6 +1,6 @@
 import { Image,StyleSheet, Text, View } from 'react-native'
-import React,{useState} from 'react'
-import {Input,Button,Alert} from 'native-base'
+import React,{useState,useEffect} from 'react'
+import {Input,Button,Slide,Alert,Text as TextNat} from 'native-base'
 import Constants from 'expo-constants'
 import { useNavigation } from "@react-navigation/native";
 
@@ -19,6 +19,16 @@ const LoginScreen = () => {
         navigator.navigate('Home');
     }
 
+    useEffect(()=>{
+
+        if(error){
+            setTimeout(()=>{
+                setError(false);
+            },3800)
+        }
+
+    },[error])
+
   return (
     
     <View style={styles.container}>
@@ -29,12 +39,12 @@ const LoginScreen = () => {
         
         <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Nombre de usuario</Text>
-            <Input mx="3" placeholder="Ingrese su nombre de usuario" alignSelf={'start'}  borderRadius={20} borderWidth={2}  />
+            <Input onChangeText={(text)=>{setUser({...user,nombre:text})}} borderColor={'black'} placeholder="Ingrese su nombre de usuario" alignSelf={'flex-start'}  borderRadius={20} borderWidth={2}    />
         </View>
 
         <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Contraseña</Text>
-            <Input mx="3" placeholder="Ingrese su contraseña"  borderRadius={20} borderWidth={2}  />
+            <Input onChangeText={(text)=>{setUser({...user,password:text})}} placeholder="Ingrese su contraseña"  borderRadius={20} borderWidth={2} borderColor={"black"}   />
         </View>
         
 
@@ -46,11 +56,16 @@ const LoginScreen = () => {
             <View style={styles.line}/>
         </View>
 
-        {error && 
-        <Alert w="100%" status={'error'}>
-            <Alert.Icon mt="1" />
-            <Text>Introduce todos los campos</Text>
-        </Alert>}
+        <Image style={{marginVertical:20,alignSelf:'center',height:40,width:40}} source={require('../../assets/google.png')} />
+
+        <Slide in={error} placement="top">
+        <Alert justifyContent="center" status="error" safeAreaTop={8}>
+          <Alert.Icon />
+          <TextNat color="error.600" fontWeight="medium">
+            Rellene todos los campos 
+          </TextNat>
+        </Alert>
+      </Slide>
 
     </View>
   )
@@ -65,7 +80,7 @@ const styles = StyleSheet.create({
     },
 
     image:{
-        marginTop:40,
+        marginTop:80,
         width:150,
         height:70,
         alignSelf:'center',
@@ -79,7 +94,8 @@ const styles = StyleSheet.create({
         marginBottom:25,
         fontSize:16,
         alignSelf:'center',
-        width:60,
+        width:160,
+        textAlign:'center',
     },
 
     inputContainer:{

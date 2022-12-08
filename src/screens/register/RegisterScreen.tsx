@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import { View,Text,StyleSheet, Image, TextInput, Alert, TouchableOpacity} from "react-native"
 import {Input,Button} from 'native-base'
 import { useNavigation } from "@react-navigation/native";
@@ -26,31 +25,31 @@ const RegisterScreen = () =>{
             </View>
 
             <View style={styles.viewInputs}>
-                <Text>Nombre de usuario (*)</Text>
-                <Input style={styles.inputs} placeholder="Ingrese su nombre de usuario"></Input>
+                <Text style={{marginBottom:5}}>Nombre de usuario (*)</Text>
+                <Input borderColor={"black"} borderRadius={20} borderWidth={2} style={styles.inputs} placeholder="Ingrese su nombre de usuario"></Input>
             </View>
 
             <View style={styles.viewInputs}>
-                <Text>Correo electrónico (*)</Text>
-                <Input style={styles.inputs} placeholder="Ingrese su correo electrónico"></Input>
+                <Text style={{marginBottom:5}}>Correo electrónico (*)</Text>
+                <Input borderColor={"black"} borderRadius={20} borderWidth={2} style={styles.inputs} placeholder="Ingrese su correo electrónico"></Input>
             </View>
 
             <View style={styles.viewInputs}>
-                <Text>Dirección</Text>
-                <Input style={styles.inputs} placeholder="Ingrese su dirección"></Input>
+                <Text style={{marginBottom:5}}>Dirección</Text>
+                <Input borderColor={"black"} borderRadius={20} borderWidth={2} style={styles.inputs}  placeholder="Ingrese su dirección"></Input>
             </View>
 
             <View style={styles.viewInputs}>
-                <Text>Empresa</Text>
-                <Input style={styles.inputs} placeholder="Ingrese su empresa"></Input>
+                <Text style={{marginBottom:5}}>Empresa</Text>
+                <Input borderColor={"black"} borderRadius={20} borderWidth={2} style={styles.inputs} placeholder="Ingrese su empresa"></Input>
             </View>
 
             <View style={styles.viewInputs}>
-                <Text>Contraseña (*)</Text>
-                <Input style={styles.inputs} placeholder="Ingrese su contraseña"></Input>
+                <Text style={{marginBottom:5}}>Contraseña (*)</Text>
+                <Input borderColor={"black"} borderRadius={20} borderWidth={2} style={styles.inputs} placeholder="Ingrese su contraseña"></Input>
             </View>
             
-              <Text style={{fontSize:12,margin:10,alignSelf:'center'}} onPress={()=>navigator.navigate('Login')} >¿Ya tienes una cuenta? Iniciar Sesion</Text>
+              <Text style={{fontSize:12,margin:20,alignSelf:'center'}} onPress={()=>navigator.navigate('Login')} >¿Ya tienes una cuenta? Iniciar Sesion</Text>
 
               <Button onPress={()=>navigator.navigate('Home')} style={styles.button} borderRadius={'full'} background={'#FFB660'}>Registrarse</Button>
 
@@ -85,6 +84,7 @@ const styles = StyleSheet.create({
         paddingVertical:15,
         alignSelf:'center',
         marginVertical:20,
+        marginBottom:20,
         fontSize:40,
         width:330,
         height:60

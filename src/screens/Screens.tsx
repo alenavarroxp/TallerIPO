@@ -34,6 +34,7 @@ const Screens = () => {
             
             options={{
             title: 'TallerIPO',
+            headerShown:false,
           }}
           />
       
