@@ -25,12 +25,20 @@ const Screens = () => {
             }}
            />
         
-          
-         
       
           <Stack.Screen 
             name="Home"
             component={HomeScreen}
+            
+            options={{
+            title: 'TallerIPO',
+            headerShown:false,
+          }}
+          />
+
+            <Stack.Screen 
+            name="Compra"
+            component={CompraScreen}
             
             options={{
             title: 'TallerIPO',

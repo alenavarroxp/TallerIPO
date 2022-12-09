@@ -20,37 +20,38 @@ export const listaObjetos:Array<objeto> = [
         marca:"Puerta Verde",
         imagen:require('../assets/objetos/puerta.png'),
         modelo:"C-29",
-        tipo:"Enroscable" ,
-        precio:30.50,
+        tipo:"Chapa" ,
+        precio:30.99,
     },
     {
         marca:"Axion23",
         imagen:require('../assets/objetos/montonRuedas.png'),
         modelo:"Axion23",
         tipo:"Invierno" ,
-        precio:40.19,
+        precio:40.39,
     },
     {
         marca:"Axion23",
         imagen:require('../assets/objetos/montonRuedas.png'),
         modelo:"Axion23",
         tipo:"Invierno" ,
-        precio:40.49,
+        precio:46.99,
     },
     {
         marca:"Axion23",
         imagen:require('../assets/objetos/montonRuedas.png'),
         modelo:"Axion23",
         tipo:"Invierno" ,
-        precio:40.89,
+        precio:60.15,
     },
     {
         marca:"Axion23",
         imagen:require('../assets/objetos/montonRuedas.png'),
         modelo:"Axion23",
         tipo:"Invierno" ,
-        precio:40.99,
+        precio:80.79,
     },
+    
     
 ]
 

@@ -10,6 +10,8 @@ import Constants from 'expo-constants'
 import { NeumaticosScreen } from ".."
 import { listaObjetos } from "../../constants/objetos"
 import { AirbnbRating  } from 'react-native-ratings';
+import { useNavigation } from "@react-navigation/native"
+
 
 const LLAVE_IMAGE = require('../../assets/objetos/llave.png')
 
@@ -22,6 +24,8 @@ const HomeScreen = () => {
   });
   
   const [contenido,setContenido ] = useState(true);
+
+  const navigator = useNavigation<any>();
 
   return (
     <View style={styles.container}>
@@ -84,12 +88,13 @@ const HomeScreen = () => {
        <View>
         <FlatList 
         numColumns={2}
-        contentContainerStyle={{alignItems:'center'}}
+
+        contentContainerStyle={{alignItems:'center',}}
         data={listaObjetos}
         renderItem={({item})=>{
           return(
            
-              <View style={styles.cardContainer}>
+              <TouchableOpacity activeOpacity={0.8} onPress={()=>{navigator.navigate("Compra",{item:item})}} style={styles.cardContainer}>
 
                 <Image style={{width:80,height:80,marginVertical:10}} source={item.imagen} /> 
 
@@ -115,7 +120,7 @@ const HomeScreen = () => {
                   />
 
                 </View>
-              </View>
+              </TouchableOpacity>
             
             
           )
@@ -130,9 +135,7 @@ const HomeScreen = () => {
     </View>
   )
 }
-HomeScreen.defaultProps = {
-  markers: [],
-};
+
 
 export default HomeScreen
 
