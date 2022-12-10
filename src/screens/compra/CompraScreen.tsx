@@ -17,7 +17,7 @@ const CompraScreen = () => {
   const Objeto:objeto = route.params.item;
   const [counter,setCounter] = useState(1);
   function ComprarAlerta(){
-    Alert.alert("Pieza comprada con éxito");
+    Alert.alert("Pieza añadida con éxito al carrito.");
   
   }
   function cambiarCount(tipoOperacion:operacion){
@@ -99,9 +99,6 @@ const CompraScreen = () => {
                   selectedColor={'#f1c40f'}
       />
       
-      
-
-     
       <Text style={{margin:20,fontSize:11,marginTop:70,color:'#B1AAAA'}}>Términos y Condiciones usa tus datos para
         responder tu consulta y llevar un control de las mismas. 
         Puedes ejercer tus derechos de acceso o supresión, entre otros,
